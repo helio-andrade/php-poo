@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Somar Dois Números</title>
+</head>
+<body>
+
+    <h1>Somar Dois Números</h1>
+    
+    <form id="formulario">
+        <label for="numero1">Número 1:</label>
+        <input type="number" id="numero1" required><br><br>
+
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" required><br><br>
+
+        <input type="submit" value="Somar">
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        // Função que soma os números e exibe o resultado
+        document.getElementById("formulario").addEventListener("submit", 
+            function(event) {
+                event.preventDefault(); // Impede o envio do formulário
+                
+                // Obtendo os valores dos números inseridos
+                var numero1 = parseFloat(document.getElementById("numero1").value);
+                var numero2 = parseFloat(document.getElementById("numero2").value);
+                
+                // Calculando a soma
+                var soma = numero1 + numero2;
+                
+                // Exibindo o resultado
+                document.getElementById("resultado").textContent = "A soma é: " + soma;
+            }
+        );
+    </script>
+
+</body>
+</html>
